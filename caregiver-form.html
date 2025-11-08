@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caregiver Registration | Geeva Care</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">Geeva Care</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="caregiver-form.html" class="active">Caregiver Apply</a>
+      <a href="patient-form.html">Need Care</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="form-section">
+    <h2>Caregiver Registration</h2>
+
+    <form action="https://formsubmit.co/rahulgolada36@gmail.com" method="POST" enctype="multipart/form-data" class="form-box">
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="name">Full Name</label>
+      <input id="name" type="text" name="Full Name" required>
+
+      <label for="age">Age</label>
+      <input id="age" type="number" name="Age" required>
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="text" name="Phone Number" required>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" name="Email">
+
+      <label for="address">Address</label>
+      <input id="address" type="text" name="Address" required>
+
+      <label for="experience">Experience (Months/Years)</label>
+      <input id="experience" type="text" name="Experience">
+
+      <label for="shift">Shift Preference</label>
+      <select id="shift" name="Shift Preference">
+        <option>Day Shift</option>
+        <option>Night Shift</option>
+        <option>12 Hours</option>
+      </select>
+
+      <label for="skills">Skills</label>
+      <textarea id="skills" name="Skills" placeholder="BP check, Injection, Catheter care etc."></textarea>
+
+      <label for="id">Upload ID Proof</label>
+      <input id="id" type="file" name="ID Proof" required>
+
+      <label for="photo">Upload Photo</label>
+      <input id="photo" type="file" name="Photo" required>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Geeva Care. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

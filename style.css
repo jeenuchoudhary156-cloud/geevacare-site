@@ -1,0 +1,128 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Header & Nav */
+.header {
+  background: #3c6e91;
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo { font-size: 24px; font-weight: bold; }
+
+.nav a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav a:hover,
+.nav a.active {
+  text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #3c6e91, #7a7a7a);
+  color: white;
+}
+.hero h2 { font-size: 32px; margin-bottom: 10px; }
+.hero-buttons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+
+/* Buttons */
+.btn, .btn-outline {
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn {
+  background: #3c6e91;
+  color: white;
+}
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+}
+
+/* Features */
+.features {
+  display: flex;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  min-width: 250px;
+}
+
+/* Forms */
+.form-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.form-box {
+  background: white;
+  padding: 25px;
+  max-width: 450px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.form-box input,
+.form-box select,
+.form-box textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.form-box button {
+  margin-top: 10px;
+}
+
+/* Page section */
+.page-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #3c6e91;
+  color: white;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .features { flex-direction: column; align-items: center; }
+  .feature-card { width: 100%; max-width: 400px; }
+  .hero h2 { font-size: 26px; }
+}

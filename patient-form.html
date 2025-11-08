@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Care Request | Geeva Care</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">Geeva Care</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="caregiver-form.html">Caregiver Apply</a>
+      <a href="patient-form.html" class="active">Need Care</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="form-section">
+    <h2>Request a Caregiver</h2>
+
+    <form action="https://formsubmit.co/rahulgolada36@gmail.com" method="POST" class="form-box">
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="patient">Patient Name</label>
+      <input id="patient" type="text" name="Patient Name" required>
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="text" name="Phone Number" required>
+
+      <label for="city">City</label>
+      <input id="city" type="text" name="City" required>
+
+      <label for="hours">Required Hours</label>
+      <select id="hours" name="Care Hours">
+        <option>12 Hours</option>
+        <option>24 Hours</option>
+        <option>Day Only</option>
+        <option>Night Only</option>
+      </select>
+
+      <label for="condition">Condition</label>
+      <textarea id="condition" name="Condition" placeholder="Explain patient's condition"></textarea>
+
+      <button class="btn" type="submit">Submit Request</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Geeva Care. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
