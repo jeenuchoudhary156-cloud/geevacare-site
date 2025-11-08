@@ -9,7 +9,165 @@
 </head>
 <body>
   <header class="header">
-    <h1 class="logo">Geeva Care</h1>
+    <div class="geeva-logo" id="geevaLogo">
+  <!-- SVG + text block -->
+  <!-- ( <!-- ===========================
+   GEEVA CARE ANIMATED LOGO
+   Theme: Sanskriti-inspired | White-Grey aesthetic
+   =========================== -->
+<style>
+  /* =====================
+     LOGO CONTAINER
+  ===================== */
+  .geeva-logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    color: #3C6E91; /* main text color */
+  }
+
+  /* SVG Sizing */
+  .geeva-logo svg {
+    width: 86px;
+    height: 86px;
+    flex: 0 0 86px;
+  }
+
+  /* =====================
+     STROKE DRAW ANIMATION
+  ===================== */
+  .draw-path {
+    stroke: #5FA8D3; /* light accent */
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 1.2s ease forwards 0.1s;
+  }
+
+  @keyframes draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* =====================
+     FILL FADE AFTER DRAW
+  ===================== */
+  .fill-petal { 
+    fill: rgba(95,168,211,0);
+    transition: fill 0.6s ease 1.3s;
+  }
+
+  .geeva-logo.anim .fill-petal {
+    fill: rgba(95,168,211,0.14);
+  }
+
+  /* =====================
+     PULSE ANIMATION
+  ===================== */
+  .symbol {
+    transform-origin: center;
+    animation: pulse 2.5s ease-in-out 1.9s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }
+
+  /* =====================
+     TEXT ANIMATIONS
+  ===================== */
+  .geeva-text { 
+    display: flex; 
+    flex-direction: column;
+    line-height: 1;
+    transform: translateY(8px);
+    opacity: 0;
+    animation: textIn 0.9s ease forwards 0.9s;
+  }
+
+  @keyframes textIn {
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3C6E91; /* steel blue */
+    letter-spacing: 0.4px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    color: #7A7A7A; /* soft grey */
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* =====================
+     RESPONSIVE ADJUSTMENTS
+  ===================== */
+  @media (max-width: 420px) {
+    .geeva-logo svg {
+      width: 66px;
+      height: 66px;
+    }
+    .brand {
+      font-size: 18px;
+    }
+  }
+</style>
+
+<!-- =====================
+     LOGO HTML STRUCTURE
+===================== -->
+<div class="geeva-logo" id="geevaLogo">
+  <!-- Lotus-inspired Symbol -->
+  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+    <g class="symbol" transform="translate(60,60)">
+      <!-- Left Petal -->
+      <path class="draw-path" d="M -6 -18 C -28 -46 -60 -22 -36 6 C -12 34 8 34 8 34" />
+      <path class="fill-petal" d="M -6 -18 C -28 -46 -60 -22 -36 6 C -12 34 8 34 8 34 z" />
+
+      <!-- Right Petal -->
+      <path class="draw-path" d="M 6 -18 C 28 -46 60 -22 36 6 C 12 34 -8 34 -8 34" />
+      <path class="fill-petal" d="M 6 -18 C 28 -46 60 -22 36 6 C 12 34 -8 34 -8 34 z" />
+
+      <!-- Top Petal / Crest -->
+      <path class="draw-path" d="M -8 -6 C -2 -46 10 -56 22 -6 C 34 44 4 48 -6 34" />
+      <path class="fill-petal" d="M -8 -6 C -2 -46 10 -56 22 -6 C 34 44 4 48 -6 34 z" />
+
+      <!-- Heart Center -->
+      <path class="draw-path" d="M -6 4 C -6 -2 0 -4 2 2 C 4 -4 10 -2 10 4 C10 12 2 18 -4 14 C -10 18 -18 12 -18 4 C -18 -2 -12 0 -6 4 z" transform="scale(0.45) translate(6,-4)" />
+      <path class="fill-petal" d="M -6 4 C -6 -2 0 -4 2 2 C 4 -4 10 -2 10 4 C10 12 2 18 -4 14 C -10 18 -18 12 -18 4 C -18 -2 -12 0 -6 4 z" transform="scale(0.45) translate(6,-4)" />
+    </g>
+  </svg>
+
+  <!-- Text Block -->
+  <div class="geeva-text">
+    <div class="brand">Geeva Care</div>
+    <div class="tagline">The Care Belongs to You — सेवा आपके लिए</div>
+  </div>
+</div>
+
+<!-- =====================
+     LOGO SCRIPT
+===================== -->
+<script>
+  /* Trigger fill transition after draw animation */
+  window.addEventListener('load', function() {
+    setTimeout(() => {
+      document.getElementById('geevaLogo').classList.add('anim');
+    }, 200);
+  });
+</script>
+-->
+</div>
+
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="caregiver-form.html">Caregiver Apply</a>
@@ -48,3 +206,4 @@
   </footer>
 </body>
 </html>
+
