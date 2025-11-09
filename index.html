@@ -1,209 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geeva Care | Trusted Care, Delivered to Your Home</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <header class="header">
-    <div class="geeva-logo" id="geevaLogo">
-  <!-- SVG + text block -->
-  <!-- ( <!-- ===========================
-   GEEVA CARE ANIMATED LOGO
-   Theme: Sanskriti-inspired | White-Grey aesthetic
-   =========================== -->
-<style>
-  /* =====================
-     LOGO CONTAINER
-  ===================== */
-  .geeva-logo {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-    color: #3C6E91; /* main text color */
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeevaCare – The care belongs to you.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Animated warm gradient background */
+      body {
+        background: linear-gradient(-45deg, #fff6e5, #ffe0b2, #ffd1a9, #fff3e0);
+        background-size: 400% 400%;
+        animation: gradientMove 15s ease infinite;
+      }
 
-  /* SVG Sizing */
-  .geeva-logo svg {
-    width: 86px;
-    height: 86px;
-    flex: 0 0 86px;
-  }
+      @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
 
-  /* =====================
-     STROKE DRAW ANIMATION
-  ===================== */
-  .draw-path {
-    stroke: #5FA8D3; /* light accent */
-    stroke-width: 3;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    stroke-dasharray: 300;
-    stroke-dashoffset: 300;
-    animation: draw 1.2s ease forwards 0.1s;
-  }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
 
-  @keyframes draw {
-    to { stroke-dashoffset: 0; }
-  }
+  <body class="text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+      <div class="flex items-center space-x-3">
+        <!-- Logo placeholder -->
+        <div class="w-10 h-10 rounded-full bg-amber-300 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+          G
+        </div>
+        <h1 class="text-2xl font-semibold text-amber-800">GeevaCare</h1>
+      </div>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="#home" class="hover:text-amber-700 font-medium">Home</a>
+        <a href="#how" class="hover:text-amber-700 font-medium">How it Works</a>
+        <a href="#about" class="hover:text-amber-700 font-medium">About</a>
+        <a href="#contact" class="hover:text-amber-700 font-medium">Contact</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-amber-700">☰</button>
+      </div>
+    </header>
 
-  /* =====================
-     FILL FADE AFTER DRAW
-  ===================== */
-  .fill-petal { 
-    fill: rgba(95,168,211,0);
-    transition: fill 0.6s ease 1.3s;
-  }
+    <!-- Hero Section -->
+    <section id="home" class="text-center py-20 px-6 max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+        The care belongs to you.
+      </h2>
+      <p class="text-lg text-gray-700 mb-8">
+        Trusted home care services inspired by tradition and delivered with compassion.
+      </p>
+      <div class="flex justify-center gap-6">
+        <a href="#need-care"
+          class="bg-amber-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-amber-700 transition">
+          Need a Caregiver
+        </a>
+        <a href="#apply"
+          class="border-2 border-amber-600 text-amber-700 px-6 py-3 rounded-full shadow-lg hover:bg-amber-600 hover:text-white transition">
+          Join as Caregiver
+        </a>
+      </div>
+    </section>
 
-  .geeva-logo.anim .fill-petal {
-    fill: rgba(95,168,211,0.14);
-  }
+    <!-- How GeevaCare Works -->
+    <section id="how" class="py-16 bg-white/70 backdrop-blur-sm">
+      <div class="max-w-5xl mx-auto text-center">
+        <h3 class="text-3xl font-semibold text-amber-800 mb-12">
+          How GeevaCare Works
+        </h3>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="p-6 bg-white rounded-2xl shadow-md">
+            <h4 class="text-xl font-semibold mb-3 text-amber-700">1. Tell Us Your Needs</h4>
+            <p class="text-gray-700">
+              Share your requirements and preferences for the perfect caregiver match.
+            </p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl shadow-md">
+            <h4 class="text-xl font-semibold mb-3 text-amber-700">2. We Verify & Match</h4>
+            <p class="text-gray-700">
+              Every caregiver is background-checked and trained to ensure safety and reliability.
+            </p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl shadow-md">
+            <h4 class="text-xl font-semibold mb-3 text-amber-700">3. Care Delivered to You</h4>
+            <p class="text-gray-700">
+              Your chosen caregiver provides compassionate care right at your doorstep.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  /* =====================
-     PULSE ANIMATION
-  ===================== */
-  .symbol {
-    transform-origin: center;
-    animation: pulse 2.5s ease-in-out 1.9s infinite;
-  }
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 text-center max-w-4xl mx-auto">
+      <h3 class="text-3xl font-semibold text-amber-800 mb-6">About GeevaCare</h3>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        GeevaCare is built on the values of *Sanskriti* — compassion, respect, and dedication.
+        Our mission is to make caregiving simple, trustworthy, and accessible to every family.
+        We bridge traditional values with modern service to bring you care that feels like home.
+      </p>
+      <a href="#contact"
+        class="inline-block bg-amber-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-amber-700 transition">
+        Contact Us
+      </a>
+    </section>
 
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.03); }
-    100% { transform: scale(1); }
-  }
+    <!-- Footer -->
+    <footer class="bg-amber-800 text-white text-center py-6">
+      <p>&copy; 2025 GeevaCare. All rights reserved.</p>
+      <p class="text-sm mt-2">The care belongs to you.</p>
+    </footer>
 
-  /* =====================
-     TEXT ANIMATIONS
-  ===================== */
-  .geeva-text { 
-    display: flex; 
-    flex-direction: column;
-    line-height: 1;
-    transform: translateY(8px);
-    opacity: 0;
-    animation: textIn 0.9s ease forwards 0.9s;
-  }
-
-  @keyframes textIn {
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  .brand {
-    font-size: 22px;
-    font-weight: 700;
-    color: #3C6E91; /* steel blue */
-    letter-spacing: 0.4px;
-  }
-
-  .tagline {
-    font-size: 12px;
-    color: #7A7A7A; /* soft grey */
-    margin-top: 6px;
-    font-weight: 500;
-  }
-
-  /* =====================
-     RESPONSIVE ADJUSTMENTS
-  ===================== */
-  @media (max-width: 420px) {
-    .geeva-logo svg {
-      width: 66px;
-      height: 66px;
-    }
-    .brand {
-      font-size: 18px;
-    }
-  }
-</style>
-
-<!-- =====================
-     LOGO HTML STRUCTURE
-===================== -->
-<div class="geeva-logo" id="geevaLogo">
-  <!-- Lotus-inspired Symbol -->
-  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-    <g class="symbol" transform="translate(60,60)">
-      <!-- Left Petal -->
-      <path class="draw-path" d="M -6 -18 C -28 -46 -60 -22 -36 6 C -12 34 8 34 8 34" />
-      <path class="fill-petal" d="M -6 -18 C -28 -46 -60 -22 -36 6 C -12 34 8 34 8 34 z" />
-
-      <!-- Right Petal -->
-      <path class="draw-path" d="M 6 -18 C 28 -46 60 -22 36 6 C 12 34 -8 34 -8 34" />
-      <path class="fill-petal" d="M 6 -18 C 28 -46 60 -22 36 6 C 12 34 -8 34 -8 34 z" />
-
-      <!-- Top Petal / Crest -->
-      <path class="draw-path" d="M -8 -6 C -2 -46 10 -56 22 -6 C 34 44 4 48 -6 34" />
-      <path class="fill-petal" d="M -8 -6 C -2 -46 10 -56 22 -6 C 34 44 4 48 -6 34 z" />
-
-      <!-- Heart Center -->
-      <path class="draw-path" d="M -6 4 C -6 -2 0 -4 2 2 C 4 -4 10 -2 10 4 C10 12 2 18 -4 14 C -10 18 -18 12 -18 4 C -18 -2 -12 0 -6 4 z" transform="scale(0.45) translate(6,-4)" />
-      <path class="fill-petal" d="M -6 4 C -6 -2 0 -4 2 2 C 4 -4 10 -2 10 4 C10 12 2 18 -4 14 C -10 18 -18 12 -18 4 C -18 -2 -12 0 -6 4 z" transform="scale(0.45) translate(6,-4)" />
-    </g>
-  </svg>
-
-  <!-- Text Block -->
-  <div class="geeva-text">
-    <div class="brand">Geeva Care</div>
-    <div class="tagline">The Care Belongs to You — सेवा आपके लिए</div>
-  </div>
-</div>
-
-<!-- =====================
-     LOGO SCRIPT
-===================== -->
-<script>
-  /* Trigger fill transition after draw animation */
-  window.addEventListener('load', function() {
-    setTimeout(() => {
-      document.getElementById('geevaLogo').classList.add('anim');
-    }, 200);
-  });
-</script>
--->
-</div>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="caregiver-form.html">Caregiver Apply</a>
-      <a href="patient-form.html">Need Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>Trusted Care, Delivered to Your Home</h2>
-    <p>Affordable, reliable, and skilled caregivers available 24/7 in your city.</p>
-    <div class="hero-buttons">
-      <a class="btn" href="caregiver-form.html">Join as Caregiver</a>
-      <a class="btn-outline" href="patient-form.html">Need a Caregiver</a>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="feature-card">
-      <h3>Verified Caregivers</h3>
-      <p>Every caregiver is identity-checked and skill-verified.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Fair Pricing</h3>
-      <p>We ensure caregivers get fair payment and patients get reliable service.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Daily Attendance Guarantee</h3>
-      <p>We make sure caregivers never miss a single shift.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 Geeva Care. All Rights Reserved.</p>
-  </footer>
-</body>
+    <!-- Mobile menu toggle -->
+    <script>
+      const menuBtn = document.getElementById('menu-btn');
+      const nav = document.querySelector('nav');
+      menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('hidden');
+        nav.classList.toggle('flex');
+        nav.classList.toggle('flex-col');
+        nav.classList.toggle('items-center');
+        nav.classList.toggle('bg-amber-50');
+        nav.classList.toggle('p-4');
+      });
+    </script>
+  </body>
 </html>
-
