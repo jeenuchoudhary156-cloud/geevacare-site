@@ -30,102 +30,46 @@
     <header class="flex justify-between items-center p-6 max-w-6xl mx-auto">
       <div class="flex items-center space-x-3">
         <!-- Logo placeholder -->
-        <!-- Sanskriti-inspired animated OM logo (teal + saffron) -->
-<svg class="logo-svg" width="56" height="56" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
-  <title id="logoTitle">GeevaCare logo</title>
-  <desc id="logoDesc">Sanskriti-inspired Om symbol with rotating mandala ring and gentle pulse, colors teal and saffron.</desc>
+<div class="flex items-center space-x-2">
+  <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+    <title id="logoTitle">GeevaCare logo</title>
+    <desc id="logoDesc">Om symbol with gentle animation and teal–saffron palette.</desc>
+    <defs>
+      <linearGradient id="gTeal" x1="0%" x2="100%">
+        <stop offset="0%" stop-color="#0ea5a1"/>
+        <stop offset="100%" stop-color="#34d399"/>
+      </linearGradient>
+      <linearGradient id="gSaffron" x1="0%" x2="100%">
+        <stop offset="0%" stop-color="#f59e0b"/>
+        <stop offset="100%" stop-color="#fb923c"/>
+      </linearGradient>
+    </defs>
 
-  <defs>
-    <!-- Teal -> lighter teal gradient for the OM -->
-    <linearGradient id="gTeal" x1="0%" x2="100%">
-      <stop offset="0%" stop-color="#0ea5a1"/>
-      <stop offset="100%" stop-color="#34d399"/>
-    </linearGradient>
+    <g transform="translate(60,60)">
+      <!-- rotating saffron ring -->
+      <circle r="28" fill="none" stroke="url(#gSaffron)" stroke-width="4" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+      </circle>
 
-    <!-- Saffron gradient for accents -->
-    <linearGradient id="gSaffron" x1="0%" x2="100%">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#fb923c"/>
-    </linearGradient>
-
-    <!-- soft glow filter -->
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="3.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-
-  <!-- rotating decorative ring (very subtle mandala dots) -->
-  <g transform="translate(60,60)">
-    <g id="ring" filter="url(#glow)">
-      <!-- ring base -->
-      <circle r="34" fill="none" stroke="url(#gSaffron)" stroke-width="4" opacity="0.95"/>
-      <!-- decorative dots around ring -->
-      <!-- 12 dots placed by rotation -->
-      <g id="dots">
-        <!-- single dot -->
-        <circle cx="0" cy="-44" r="3.5" fill="url(#gSaffron)" />
-        <use href="#dots" />
-      </g>
-      <!-- rotate the whole dots group by animation -->
-      <g>
-        <g>
-          <!-- create 12 duplicates by rotation using transform on each -->
-          <!-- We'll manually place 12 dots with transforms -->
-          <circle cx="0" cy="-44" r="3.2" fill="url(#gSaffron)" transform="rotate(0)"/>
-          <circle cx="0" cy="-44" r="2.6" fill="url(#gSaffron)" transform="rotate(30)"/>
-          <circle cx="0" cy="-44" r="3.0" fill="url(#gSaffron)" transform="rotate(60)"/>
-          <circle cx="0" cy="-44" r="2.8" fill="url(#gSaffron)" transform="rotate(90)"/>
-          <circle cx="0" cy="-44" r="3.2" fill="url(#gSaffron)" transform="rotate(120)"/>
-          <circle cx="0" cy="-44" r="2.6" fill="url(#gSaffron)" transform="rotate(150)"/>
-          <circle cx="0" cy="-44" r="3.2" fill="url(#gSaffron)" transform="rotate(180)"/>
-          <circle cx="0" cy="-44" r="2.6" fill="url(#gSaffron)" transform="rotate(210)"/>
-          <circle cx="0" cy="-44" r="3.0" fill="url(#gSaffron)" transform="rotate(240)"/>
-          <circle cx="0" cy="-44" r="2.8" fill="url(#gSaffron)" transform="rotate(270)"/>
-          <circle cx="0" cy="-44" r="3.0" fill="url(#gSaffron)" transform="rotate(300)"/>
-          <circle cx="0" cy="-44" r="2.6" fill="url(#gSaffron)" transform="rotate(330)"/>
-        </g>
-        <!-- slow rotation of the decorative group -->
-        <animateTransform attributeName="transform" type="rotate"
-                          from="0" to="360" dur="18s"
-                          repeatCount="indefinite" />
-      </g>
-    </g>
-
-    <!-- central OM glyph (Devanagari character) -->
-    <!-- Using text for the Om character so it is crisp and scalable.
-         If you prefer a custom path, we can replace this with a vector path. -->
-    <g id="om" transform="translate(-4,6)">
-      <text x="0" y="0"
-            font-family="serif, 'Noto Serif Devanagari', 'Mangal', 'Poppins', serif"
-            font-size="48"
-            text-anchor="middle"
-            dominant-baseline="central"
-            fill="url(#gTeal)"
-            style="font-weight:600;">
-        <!-- Devanagari Om character -->
+      <!-- pulsing Om symbol -->
+      <text x="0" y="14"
+        font-family="'Noto Serif Devanagari', serif"
+        font-size="48"
+        text-anchor="middle"
+        fill="url(#gTeal)"
+        font-weight="600">
         ॐ
       </text>
-
-      <!-- soft pulsing circle behind the Om -->
-      <circle r="26" fill="none" stroke="url(#gTeal)" stroke-width="1.5" opacity="0.08" />
-      <circle r="18" fill="url(#gTeal)" opacity="0.06">
-        <animate attributeName="opacity" values="0.06;0.18;0.06" dur="3.6s" repeatCount="indefinite"/>
-        <animateTransform attributeName="transform" type="scale" values="1;1.06;1" dur="3.6s" repeatCount="indefinite"/>
+      <circle r="20" fill="url(#gTeal)" opacity="0.05">
+        <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="3s" repeatCount="indefinite"/>
       </circle>
     </g>
-  </g>
+  </svg>
 
-  <!-- small textual brand mark (optional, shown when there's room) -->
-  <g transform="translate(6,100)">
-    <text x="0" y="0" font-family="Poppins, Inter, sans-serif" font-size="10" fill="#0f766e" font-weight="600">
-      GeevaCare
-    </text>
-  </g>
-</svg>
+  <!-- Brand name text -->
+  <span class="text-xl md:text-2xl font-bold text-saffron-600">GeevaCare</span>
+</div>
+
 
         <h1 class="text-2xl font-semibold text-amber-800">GeevaCare</h1>
       </div>
@@ -224,4 +168,5 @@
     </script>
   </body>
 </html>
+
 
