@@ -8,68 +8,73 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root{
+    :root {
       --teal-1: #e6fffb;
       --peach-1: #fff7ed;
+      --accent-teal: #0ea5a1;
+      --accent-saffron: #f59e0b;
+      --muted: #6b7280;
     }
-
-    body{
-      font-family: "Poppins", sans-serif;
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #0f172a;
       background: linear-gradient(120deg, var(--peach-1) 0%, #fffaf0 35%, var(--teal-1) 100%);
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    .lotus-bg {
-      position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.22;
+    /* background lotus visuals */
+    .lotus-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.2; }
+
+    /* CTA */
+    .cta-outline {
+      background: rgba(255,255,255,0.55);
+      border: 1.5px solid rgba(15,23,42,0.06);
+      box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
-    .lotus { position: absolute; will-change: transform, opacity; filter: blur(.6px) drop-shadow(0 6px 18px rgba(15,23,42,0.06)); }
-    .lotus-1 { left: 4%; top: 6%; width: 420px; animation: floatA 20s ease-in-out infinite; }
-    .lotus-2 { right: 6%; top: 18%; width: 360px; animation: floatB 16s ease-in-out infinite; }
-
-    @keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
-    @keyframes floatB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(15px)} }
-
-    .glass {
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.6);
+    .cta-outline:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(2,6,23,0.12);
+      background: linear-gradient(90deg, rgba(245,158,11,0.06), rgba(14,165,161,0.04));
     }
 
-    .cta-solid { transition: transform .16s ease; }
-    .cta-solid:hover { transform: translateY(-3px); }
-
-    .img-card { transition: transform .3s ease; }
-    .img-card:hover { transform: translateY(-5px) scale(1.01); }
+    .img-card { transition: transform .28s ease, box-shadow .28s ease; overflow: hidden; }
+    .img-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 20px 45px rgba(2,6,23,0.12); }
 
     .fade-up { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
+  <!-- Lotus background -->
+  <div class="lotus-bg"></div>
 
-  <!-- Floating lotus background -->
-  <div class="lotus-bg" aria-hidden="true">
-    <svg class="lotus lotus-1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><circle cx="200" cy="200" r="120" fill="#fffaf0" opacity=".5"/></svg>
-    <svg class="lotus lotus-2" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><circle cx="200" cy="200" r="100" fill="#fff8f2" opacity=".4"/></svg>
-  </div>
-
+  <!-- Page wrapper -->
   <div class="relative z-10">
-
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-      <!-- Logo -->
       <div class="flex items-center gap-3">
-        <div class="w-11 h-11 flex items-center justify-center rounded-full bg-white/85 shadow-sm">
-          <svg viewBox="0 0 120 120" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-11 h-11 flex items-center justify-center rounded-full bg-white shadow">
+          <svg viewBox="0 0 120 120" class="w-9 h-9" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="lg1" x1="0" x2="1">
-                <stop offset="0" stop-color="#0ea5a1"/><stop offset="1" stop-color="#34d399"/>
-              </linearGradient>
+              <linearGradient id="lg1" x1="0" x2="1"><stop offset="0" stop-color="#0ea5a1"/><stop offset="1" stop-color="#34d399"/></linearGradient>
+              <linearGradient id="lg2" x1="0" x2="1"><stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
             </defs>
-            <circle cx="60" cy="60" r="28" fill="none" stroke="url(#lg1)" stroke-width="3"/>
-            <circle cx="60" cy="60" r="6" fill="#f59e0b"/>
+            <g transform="translate(60,60)">
+              <circle r="28" fill="none" stroke="url(#lg2)" stroke-width="3" />
+              <g id="petals">
+                <path d="M0,-26 C8,-26 14,-18 18,-12 C8,-10 0,-6 0,0" fill="url(#lg1)" transform="rotate(0)"/>
+                <path d="M0,-26 C8,-26 14,-18 18,-12 C8,-10 0,-6 0,0" fill="url(#lg1)" transform="rotate(45)"/>
+                <path d="M0,-26 C8,-26 14,-18 18,-12 C8,-10 0,-6 0,0" fill="url(#lg1)" transform="rotate(90)"/>
+                <path d="M0,-26 C8,-26 14,-18 18,-12 C8,-10 0,-6 0,0" fill="url(#lg1)" transform="rotate(135)"/>
+              </g>
+              <animateTransform xlink:href="#petals" attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+              <circle r="6" fill="url(#lg2)"/>
+            </g>
           </svg>
         </div>
         <div>
@@ -78,7 +83,7 @@
         </div>
       </div>
 
-      <!-- Nav buttons (now top-right corner) -->
+      <!-- NAVIGATION BUTTONS (right corner) -->
       <nav class="flex items-center gap-6 text-gray-700 text-sm font-medium">
         <a href="#home" class="hover:text-amber-700">Home</a>
         <a href="#about" class="hover:text-amber-700">About</a>
@@ -88,55 +93,47 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <main id="home" class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <!-- Left: image -->
-      <div class="glass rounded-3xl p-6 shadow-xl fade-up" data-animate>
-        <div class="img-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1580281657521-4a5c1c8f7e1c?auto=format&fit=crop&w=1200&q=80"
-               alt="Nurse helping patient stand" class="w-full h-80 md:h-[520px] object-cover">
+    <!-- HERO SECTION -->
+    <main id="home" class="max-w-7xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- LEFT: IMAGE -->
+        <div class="img-card rounded-2xl overflow-hidden shadow-lg fade-up" data-animate>
+          <img src="https://images.unsplash.com/photo-1588774069160-4f68c198cd8f?auto=format&fit=crop&w=1400&q=80"
+               alt="Nurse helping elderly patient" class="w-full h-80 object-cover md:h-[520px]">
         </div>
 
-        <div class="mt-6">
+        <!-- RIGHT: TEXT -->
+        <div class="fade-up" data-animate>
           <h1 class="text-3xl md:text-4xl font-bold text-amber-800">Trusted home care, made human</h1>
           <p class="mt-3 text-gray-700 max-w-xl">GeevaCare connects families with compassionate caregivers, ensuring reliable home care for every loved one.</p>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-700">
+            <div class="flex items-start gap-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2"></div><div>Verified caregivers</div></div>
+            <div class="flex items-start gap-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2"></div><div>Flexible schedules</div></div>
+            <div class="flex items-start gap-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2"></div><div>Ongoing support</div></div>
+          </div>
         </div>
       </div>
-
-      <!-- Right: Supporting image -->
-      <aside class="flex flex-col gap-5 fade-up" data-animate>
-        <div class="img-card rounded-xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80"
-               alt="Smiling nurse" class="w-full h-64 object-cover">
-        </div>
-
-        <div class="p-4 bg-white/90 rounded-xl border border-amber-50 text-sm">
-          <div class="font-medium text-amber-800">Need immediate help?</div>
-          <div class="mt-1">Call: <a href="tel:+911234567890" class="text-amber-700 font-semibold">+91 12345 67890</a></div>
-        </div>
-      </aside>
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="mt-8 bg-amber-800 text-white py-8">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center text-sm opacity-90">
-          © <span id="yr"></span> GeevaCare — All rights reserved.
-        </div>
+    <!-- FOOTER -->
+    <footer id="contact" class="mt-12 bg-amber-800 text-white py-8">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <p>© <span id="yr"></span> GeevaCare — the care belongs to you.</p>
       </div>
     </footer>
-
   </div>
 
   <script>
-    // Fade-in animation
+    // scroll fade-in animation
     document.addEventListener('DOMContentLoaded', () => {
-      const targets = document.querySelectorAll('[data-animate]');
+      const els = document.querySelectorAll('[data-animate]');
       const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-      }, {threshold: 0.1});
-      targets.forEach(t => io.observe(t));
-      document.getElementById('yr').textContent = new Date().getFullYear();
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, {threshold: 0.15});
+      els.forEach(el => io.observe(el));
+      document.getElementById('yr').innerText = new Date().getFullYear();
     });
   </script>
 </body>
