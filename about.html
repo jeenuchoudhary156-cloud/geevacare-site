@@ -1,30 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Geeva Care</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="header">
-    <h1 class="logo">Geeva Care</h1>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="caregiver-form.html">Caregiver Apply</a>
-      <a href="patient-form.html">Need Care</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | GeevaCare</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 🌸 Floating lotus background animation */
+    body {
+      position: relative;
+      overflow-x: hidden;
+    }
+    .lotus {
+      position: fixed;
+      bottom: -80px;
+      width: 100px;
+      opacity: 0.3;
+      animation: floatUp 15s linear infinite;
+    }
+    .lotus:nth-child(1) { left: 10%; animation-delay: 0s; width: 80px; }
+    .lotus:nth-child(2) { left: 40%; animation-delay: 5s; width: 100px; }
+    .lotus:nth-child(3) { left: 70%; animation-delay: 10s; width: 90px; }
 
-  <section class="page-section">
-    <h2>About Us</h2>
-    <p>Geeva Care is a modern home healthcare service built with honesty and compassion. Founded by healthcare professionals, we focus on fair pricing, reliable service, and trustworthy caregivers.</p>
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ✨ Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-teal-50 text-gray-800 relative overflow-hidden">
+
+  <!-- 🌸 Floating lotus flowers -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Pink_lotus_flower.png" class="lotus" alt="lotus">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Pink_lotus_flower.png" class="lotus" alt="lotus">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Pink_lotus_flower.png" class="lotus" alt="lotus">
+
+  <!-- 🌿 Navbar -->
+  <nav class="flex justify-between items-center p-4 bg-white shadow-md fixed w-full z-50 fade-in">
+    <div class="flex items-center space-x-2">
+      <img src="images/logo.png" alt="GeevaCare Logo" class="w-10 h-10">
+      <span class="text-2xl font-bold text-teal-600">GeevaCare</span>
+    </div>
+    <ul class="flex space-x-6 text-gray-700 font-medium">
+      <li><a href="index.html" class="hover:text-teal-500 transition">Home</a></li>
+      <li><a href="about.html" class="text-teal-600 font-semibold">About</a></li>
+      <li><a href="services.html" class="hover:text-teal-500 transition">Services</a></li>
+      <li><a href="jobs.html" class="hover:text-teal-500 transition">Caregiver Jobs</a></li>
+      <li><a href="contact.html" class="hover:text-teal-500 transition">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="mt-20"></div>
+
+  <!-- 💫 About Section -->
+  <section class="max-w-5xl mx-auto text-center py-16 px-4 fade-in">
+    <h1 class="text-4xl font-bold text-teal-700 mb-4">About GeevaCare</h1>
+    <p class="text-lg text-gray-600 leading-relaxed">
+      At <strong>GeevaCare</strong>, we believe that compassionate care is more than a service—it’s a connection.  
+      Our mission is to provide reliable, trusted, and heartfelt care to patients and elders, while empowering caregivers  
+      with opportunities to grow their careers.
+    </p>
+    <div class="mt-10 flex justify-center fade-in">
+      <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1200&q=80"
+           alt="Caregiver helping elderly person" 
+           class="rounded-3xl shadow-xl w-full md:w-2/3 object-cover transition-transform duration-500 hover:scale-105">
+    </div>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 Geeva Care. All Rights Reserved.</p>
+  <!-- 💚 Mission Section -->
+  <section class="bg-teal-600 text-white py-16 px-6 fade-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-4">Our Mission</h2>
+      <p class="text-lg leading-relaxed">
+        To deliver trusted home healthcare that promotes dignity, comfort, and healing — while creating 
+        meaningful employment opportunities for caregivers, nursing students, and healthcare workers.
+      </p>
+    </div>
+  </section>
+
+  <!-- 🌼 CTA Section -->
+  <section class="py-16 text-center bg-gradient-to-b from-white to-saffron-50 fade-in">
+    <h2 class="text-3xl font-semibold text-teal-700 mb-6">Join Our Journey of Care</h2>
+    <p class="text-gray-600 mb-8">Whether you’re looking for compassionate care or a meaningful career — GeevaCare is here for you.</p>
+    <div class="flex justify-center space-x-4">
+      <a href="services.html" class="border border-teal-600 text-teal-600 px-6 py-3 rounded-xl hover:bg-teal-600 hover:text-white transition shadow-md">Our Services</a>
+      <a href="jobs.html" class="border border-orange-500 text-orange-600 px-6 py-3 rounded-xl hover:bg-orange-500 hover:text-white transition shadow-md">Join as Caregiver</a>
+    </div>
+  </section>
+
+  <!-- 🌿 Footer -->
+  <footer class="bg-teal-700 text-white py-6 text-center fade-in">
+    <p>© 2025 GeevaCare. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
